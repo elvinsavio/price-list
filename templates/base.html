@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header>
+    <form action="/search" method="post" class="search-form">
+      <input
+        type="search"
+        name="search"
+        id="search"
+        class="search-input"
+        required
+        value="{{ search }}"
+      />
+      <input type="submit" value="Search" class="search-button" />
+    </form>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+</body>
