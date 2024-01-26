@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet">
     
   </head>
-  <body class="bg-[#C2BB95] w-[600px] m-auto text-[#0B0B09]">
+  <body class="bg-[#C2BB95] h-full w-[600px] m-auto text-[#0B0B09] items-stretch">
     <header class="flex justify-end py-2 px-1 bg-[#938D71]">
       <form action="/search" method="post" class="flex">
         <input
@@ -29,6 +29,9 @@
         />
       </form>
     </header>
-    <main>{% block content %}{% endblock %}</main>
+    <main class=" scroll-auto">{% block content %}{% endblock %}</main>
+    <footer class="bg-[#938D71]">
+      hello
+    </footer>
   </body>
 </html>

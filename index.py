@@ -1,12 +1,17 @@
 from flask import Flask, render_template, request, redirect
 from utils import clean_string, remove_hyphen
+from route import landing_page
 
 app = Flask(__name__)
 
 
 @app.route("/")
-def landing_page():
-    return render_template("landing.html")
+def _landing_page():
+    '''
+        Route for landing page
+        route: /
+    '''
+    return landing_page()
 
 
 @app.route("/search", methods=["POST", "GET"])
