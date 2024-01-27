@@ -552,6 +552,10 @@ video {
   margin: auto;
 }
 
+.box-border {
+  box-sizing: border-box;
+}
+
 .block {
   display: block;
 }
@@ -560,25 +564,32 @@ video {
   display: flex;
 }
 
-.h-max {
-  height: -moz-max-content;
-  height: max-content;
-}
-
-.h-screen {
-  height: 100vh;
-}
-
 .h-full {
   height: 100%;
 }
 
-.max-h-screen {
-  max-height: 100vh;
-}
-
 .w-\[600px\] {
   width: 600px;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-\[100px\] {
+  width: 100px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.min-w-\[100px\] {
+  min-width: 100px;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
@@ -605,16 +616,6 @@ video {
   border-right-width: 0px;
 }
 
-.border-slate-800 {
-  --tw-border-opacity: 1;
-  border-color: rgb(30 41 59 / var(--tw-border-opacity));
-}
-
-.border-slate-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(100 116 139 / var(--tw-border-opacity));
-}
-
 .border-slate-700 {
   --tw-border-opacity: 1;
   border-color: rgb(51 65 85 / var(--tw-border-opacity));
@@ -623,6 +624,11 @@ video {
 .bg-\[\#0B0B09\] {
   --tw-bg-opacity: 1;
   background-color: rgb(11 11 9 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#938D71\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 141 113 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#C2BB95\] {
@@ -635,13 +641,12 @@ video {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#938D71\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 141 113 / var(--tw-bg-opacity));
-}
-
 .p-1 {
   padding: 0.25rem;
+}
+
+.p-0 {
+  padding: 0px;
 }
 
 .px-1 {
@@ -664,6 +669,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-\[\#0B0B09\] {
   --tw-text-opacity: 1;
   color: rgb(11 11 9 / var(--tw-text-opacity));
@@ -678,11 +688,6 @@ video {
   font-family: 'Kanit', sans-serif;
 }
 
-.focus\:border-slate-400:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(148 163 184 / var(--tw-border-opacity));
-}
-
 .focus\:border-slate-900:focus {
   --tw-border-opacity: 1;
   border-color: rgb(15 23 42 / var(--tw-border-opacity));
@@ -691,4 +696,14 @@ video {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+@media (min-width: 640px) {
+  .sm\:border-2 {
+    border-width: 2px;
+  }
+
+  .sm\:p-1 {
+    padding: 0.25rem;
+  }
 }
