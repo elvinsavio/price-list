@@ -5,5 +5,5 @@ def landing_page():
     '''
         Construct the landing page and returns the view
     '''
-    print(sheet.get_titles())
-    return render_template('landing.html')
+    data_list = sheet.get_titles()
+    return render_template('landing.html', data=data_list)
