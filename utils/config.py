@@ -1,3 +1,3 @@
 config = {
-    'cache_time' : 10 # in seconds
+    'cache_time' : 30
 }

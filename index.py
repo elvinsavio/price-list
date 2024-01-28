@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from utils import clean_string, remove_hyphen
-from route import landing_page
+from route import landing_page, search_page
 
 app = Flask(__name__)
 
@@ -21,7 +21,7 @@ def search_result():
         return redirect(f"/search?s={_clean_string}")
 
     search_param = request.args.get("s", "")
-    return render_template("search.html", search=remove_hyphen(search_param))
+    return search_page(search_param)
 
 
 if __name__ in "__main__":
