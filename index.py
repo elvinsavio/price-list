@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, redirect
-from utils import clean_string, remove_hyphen
+from flask import Flask, request, redirect
+from utils import clean_string
 from route import landing_page, search_page
 
 app = Flask(__name__)
@@ -7,10 +7,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def _landing_page():
-    '''
-        Route for landing page
-        route: /
-    '''
+    """
+    Route for landing page
+    route: /
+    """
     return landing_page()
 
 
@@ -18,6 +18,8 @@ def _landing_page():
 def search_result():
     if request.method == "POST":
         _clean_string = clean_string(request.form.get("search", "none"))
+        if _clean_string == "":
+            return redirect("/")
         return redirect(f"/search?s={_clean_string}")
 
     search_param = request.args.get("s", "")
