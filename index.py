@@ -15,7 +15,7 @@ def _landing_page():
 
 
 @app.route("/search", methods=["POST", "GET"])
-def search_result():
+def _search_page():
     if request.method == "POST":
         _clean_string = clean_string(request.form.get("search", "none"))
         if _clean_string == "":
@@ -24,6 +24,18 @@ def search_result():
 
     search_param = request.args.get("s", "")
     return search_page(search_param)
+
+@app.route("/list", methods=["POST", "GET"])
+def _list_page():
+    if request.method == "POST":
+        _clean_string = clean_string(request.form.get("search", "none"))
+        if _clean_string == "":
+            return redirect("/")
+        return redirect(f"/search?s={_clean_string}")
+
+    search_param = request.args.get("s", "")
+    return search_page(search_param)
+
 
 
 if __name__ in "__main__":

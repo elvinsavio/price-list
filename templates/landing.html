@@ -1,7 +1,25 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block search %}
+<form action="/search" method="post" class="flex">
+  <input
+    type="search"
+    name="search"
+    id="search"
+    class="border-1 px-1 focus:outline-none box-border w-full min-w-[100px] focus:border-slate-900"
+    value="{{ search }}"
+  />
+  <input
+    type="submit"
+    value="Search"
+    class="bg-slate-800 text-lg text-white px-2 focus:outline-none focus:border-slate-900"
+  />
+</form>
+{% endblock %} {% block content %}
 <div class="flex flex-col flex-1">
   {% for item in data %}
-  <a class="px-2 py-1 text-xl" href="list/{{ (item).replace(' ', '-').lower() }}">
+  <a
+    class="px-2 py-1 text-xl"
+    href="list/{{ (item).replace(' ', '-').lower() }}"
+  >
     {{ item }}
   </a>
   <div class="border border-black/20 mx-2"></div>

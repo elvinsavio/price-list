@@ -17,20 +17,7 @@
     class="bg-[#C2BB95] h-screen w-[600px] m-auto text-[#0B0B09] flex flex-col"
   >
     <header class="flex justify-end py-2 px-1 bg-[#938D71]">
-      <form action="/search" method="post" class="flex">
-        <input
-          type="search"
-          name="search"
-          id="search"
-          class="border-1 px-1 focus:outline-none box-border w-full min-w-[100px] focus:border-slate-900"
-          value="{{ search }}"
-        />
-        <input
-          type="submit"
-          value="Search"
-          class="bg-slate-800 text-lg text-white px-2 focus:outline-none focus:border-slate-900"
-        />
-      </form>
+      {% block search %}{% endblock %}
     </header>
     <main class="flex-1 overflow-y-auto scroll-auto flex flex-col">
       {% block content %}{% endblock %}
